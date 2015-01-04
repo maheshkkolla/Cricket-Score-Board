@@ -1,5 +1,39 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+ script(src="javascripts/home.js")
+ h2 Match Details
+ div(class="formHolder")
+  form(enctype="multipart/form-data" action="teamDetails" method="post")
+   Choose Team Details File: 
+   input(type="file" accept=".txt" id="file" name="file")
+   input(type="submit" value = "Load File")
+   p
+   if error
+    b(id="errorMessage") 
+     |Uploaded File Format is incorrect
+    p
+     |File Should be like this:
+     br
+     |[["First Team Name","player1","player2"],["Secound Team Name", "player1","player2"]] 
+  br
+  br
+  if teamDetails
+   form()
+    |Overs per innings:   
+    input(type="number" min="2", max="100" value="2" name="overs")
+    br
+    |Select First Batting Team:
+    input(type="radio" name="battiingSelection") 
+    |#{teamDetails[0][0]}                               
+    input(type="radio" name = "battiingSelection") 
+    |#{teamDetails[1][0]} 
+ div(class="formHolder")
+  if teamDetails
+   table(border=5)
+    each player, index in teamDetails[0]
+     tr
+      td #{player}
+      td #{teamDetails[1][index]}
+
+ 
