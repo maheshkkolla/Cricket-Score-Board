@@ -1,0 +1,23 @@
+[
+	{
+		"batsman1":{
+			"score":,
+			"balls":,
+			"boundaries":{
+				"4":,
+				"6":
+			},
+			"strikerate":,
+			"out":{
+				"who":,
+				"how":,
+				"by":
+			}
+		}
+	},
+
+
+	{
+
+	}
+]
