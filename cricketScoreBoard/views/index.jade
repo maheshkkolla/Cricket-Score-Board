@@ -19,21 +19,26 @@ block content
   br
   br
   if teamDetails
-   form()
+   form(action="matchDetails")
     |Overs per innings:   
     input(type="number" min="2", max="100" value="2" name="overs")
     br
     |Select First Batting Team:
-    input(type="radio" name="battiingSelection") 
-    |#{teamDetails[0][0]}                               
-    input(type="radio" name = "battiingSelection") 
-    |#{teamDetails[1][0]} 
+    select(name = "firstBat")
+     option  #{teamDetails[0][0]}                               
+     option #{teamDetails[0][1]} 
+    br
+    br
+    input(type = "submit" value = "Save Details")
  div(class="formHolder")
   if teamDetails
    table(border=5)
-    each player, index in teamDetails[0]
+    tr
+     th #{teamDetails[0][0]}
+     th #{teamDetails[0][1]}
+    each player, index in teamDetails[1]
      tr
       td #{player}
-      td #{teamDetails[1][index]}
+      td #{teamDetails[2][index]}
 
  

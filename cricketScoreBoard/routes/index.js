@@ -15,4 +15,16 @@ router.post('/teamDetails',function(req,res){
 	});	
 });
 
+router.get('/matchDetails',function(req,res){
+	var overs = req.query.overs;
+	var firstBat = req.query.firstBat;
+	records.updateMatchDetails(overs,firstBat,function(){
+		res.redirect('/runningMatch');
+	});
+});
+
+router.get('runningMatch', function(req,res){
+	res.render('runningMatch');
+});
+
 module.exports = router;

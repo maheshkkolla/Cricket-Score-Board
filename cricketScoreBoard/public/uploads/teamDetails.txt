@@ -1,3 +1,4 @@
-[["India","Mahesh","Shyam","Abhilash"],
- ["Australia","Hari","vamsi","Sirish"]
-]
+{
+	"team1":["player1", "player2","player3"],
+	"team2":["plyr1","plyr2","plyr3"]
+}
